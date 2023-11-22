@@ -67,6 +67,26 @@
   justify-content: space-between;
   align-items: center;
 }
+/* Media Queries */
+$phone-width: 0px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin phone {
+  @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
 
 @function hslac($color, $alpha) {
   @if (type-of($color) == "color") {

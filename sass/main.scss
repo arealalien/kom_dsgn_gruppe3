@@ -464,11 +464,20 @@ a:visited {
     }
   }
 }
+.al-title-long {
+  font-size: $heading-medium !important;
+}
 /* Articles */
 .article {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 5em;
+  @include phone {
+    grid-template-columns: 1fr;
+  }
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
 
   &-title {
     font-size: $heading-medium;
