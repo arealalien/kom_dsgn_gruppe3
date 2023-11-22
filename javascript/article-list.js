@@ -29,7 +29,10 @@ for (let i = 0; i < aListTitleWrappers.length; i++) {
             window.scrollTo(scrollOptions);
             aListBackgrounds[i].style.transform = 'scale(1.1, 1.1)';
             setTimeout(() => {
-                window.location.href = aListTitleWrappers[i].getAttribute("href");
+                aListBackgrounds[i].style.transform = 'scale(1.1, 1.1)';
+                setTimeout(() => {
+                    window.location.href = aListTitleWrappers[i].getAttribute("href");
+                }, 500);
             }, 500);
         }
     });
@@ -46,13 +49,5 @@ window.addEventListener("load", function() {
     for (let i = 0; i < aListTitles.length; i++) {
         const delay = 0.8 + i * 0.15;
         aListTitles[i].style.animation = `aListTitle ${aListAnimationDuration} ${delay}s ${aListAnimationDetails}`;
-    }
-});
-
-document.addEventListener("keydown", function(event) {
-    if (event.key === "ArrowDown") {
-        scrollToNextSection();
-    } else if (event.key === "ArrowUp") {
-        scrollToPreviousSection();
     }
 });

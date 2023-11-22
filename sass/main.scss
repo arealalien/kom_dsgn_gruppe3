@@ -568,6 +568,17 @@ a:visited {
     }
   }
 }
+.page-overlay {
+  width: 100%; height: 100%;
+  position: fixed;
+  background-color: hslac($black, 0);
+  pointer-events: none;
+  z-index: 99;
+}
+@keyframes pageOverlay {
+  0% { background-color: hslac($black, 0); }
+  100% { background-color: hslac($black, 1); }
+}
 .footer {
   margin: 10em 0 0 0;
 }
