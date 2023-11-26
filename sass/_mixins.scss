@@ -24,6 +24,11 @@
   justify-content: flex-end;
   align-items: flex-end;
 }
+@mixin flex-center-end {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
 /* Columns */
 @mixin flex-col {
   display: flex;
