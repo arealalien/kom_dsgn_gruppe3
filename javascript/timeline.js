@@ -1,6 +1,7 @@
 let navbar = document.querySelectorAll(".navbar")[0];
 let timeline = document.querySelectorAll(".article-timeline")[0];
 let timelineInner = document.querySelectorAll(".article-timeline-inner")[0];
+let timelineInnerBC = document.querySelectorAll(".article-timeline-inner-image")[0];
 let timelineTitle = document.querySelectorAll(".article-timeline-inner-title")[0];
 let timelineOverlay = document.querySelectorAll(".article-timeline-inner-overlay")[0];
 const timelineAnimationDetails = "cubic-bezier(.175, .685, .32, 1) forwards";
@@ -22,11 +23,21 @@ let tlarticle3 = document.querySelector("#tlarticle3");
 let tlarticle4 = document.querySelector("#tlarticle4");
 let tlarticle5 = document.querySelector("#tlarticle5");
 
-let tlarticlevideo1 = document.querySelector("#tlarticlevideo1");
-let tlarticlevideo2 = document.querySelector("#tlarticlevideo2");
-let tlarticlevideo3 = document.querySelector("#tlarticlevideo3");
-let tlarticlevideo4 = document.querySelector("#tlarticlevideo4");
-let tlarticlevideo5 = document.querySelector("#tlarticlevideo5");
+timelineInner.addEventListener("mouseover", function(event) {
+    event.preventDefault();
+
+    if (timelineOpen === false) {
+        timelineInnerBC.style.transform = "scale(1.1, 1.1)";
+    } else {
+        timelineInnerBC.style.transform = "scale(1, 1)";
+    }
+});
+
+timelineInner.addEventListener("mouseout", function(event) {
+    event.preventDefault();
+
+    timelineInnerBC.style.transform = "scale(1, 1)";
+});
 
 timelineInner.addEventListener("click", function(event) {
     event.preventDefault();
@@ -38,6 +49,7 @@ timelineInner.addEventListener("click", function(event) {
         navbar.style.animation = `none`;
         timelineBack.style.animation = `none`;
         timelineInner.style.animation = `none`;
+        timelineInnerBC.style.transform = "scale(1.1, 1.1)";
 
         setTimeout(() => {
             document.querySelector("body").style.overflow = "hidden";
@@ -71,6 +83,7 @@ timelineBackButton.addEventListener("click", function(event) {
         tlarticle3.style.display = "none";
         tlarticle4.style.display = "none";
         tlarticle5.style.display = "none";
+        timelineInnerBC.style.transform = "scale(1, 1)";
 
         setTimeout(() => {
             timelineInner.style.height = "60vh";

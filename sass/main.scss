@@ -467,6 +467,9 @@ a:visited {
 .al-title-long {
   font-size: $heading-medium !important;
 }
+.oal-title-long {
+  font-size: $heading-smaller !important;
+}
 /* Articles */
 .article {
   display: grid;
@@ -598,6 +601,8 @@ a:visited {
       max-width: 110%;
       position: absolute;
       object-fit: cover;
+      transform: scale(1, 1);
+      transition: all .3s cubic-bezier($transition-main, 1);
     }
     &-article {
       width: 100%; height: 100%;
@@ -623,6 +628,12 @@ a:visited {
         position: absolute;
         z-index: 20;
         @include flex-col();
+        @include phone {
+          max-width: calc(100% - 4em);
+        }
+        @include tablet {
+          max-width: 85%;
+        }
 
         &-title {
           color: hslac($white, 1);
