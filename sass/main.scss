@@ -377,14 +377,14 @@ a:visited {
   }
   &-list {
     padding: 5em 0 0 0;
-    width: 100%; max-width: 75%;
+    width: 100%; max-width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     place-items: flex-start;
     gap: 2em;
     &-item {
       margin: 0; padding: 0;
-      width: 100%; height: 25em;
+      width: 100%; height: 35em;
       position: relative;
       @include flex-center();
 
@@ -570,8 +570,12 @@ a:visited {
       width: 100%;
       display: grid;
       position: relative;
-      place-items: center;
+      place-items: flex-start;
       gap: 1em;
+      &-container {
+        width: 100%;
+        @include flex-col();
+      }
     }
     &-image {
       width: 100%;
@@ -765,4 +769,33 @@ a:visited {
 }
 .footer {
   margin: 10em 0 0 0;
+}
+.image-source {
+  font-size: calc($paragraph - .3rem);
+  font-weight: 300;
+
+  a {
+    font-size: calc($paragraph - .3rem);
+    font-weight: 300;
+  }
+}
+#map {
+  margin: 5em 0;
+  height: 50vh;
+}
+.map-grid {
+  height: 50vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+
+  #map2, #map3, #map4 {
+    width: 100%; height: 100%;
+  }
+}
+.leaflet-pane {
+  z-index: 40 !important;
+}
+.leaflet-top, .leaflet-bottom {
+  z-index: 40 !important;
 }
