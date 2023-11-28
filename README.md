@@ -1,6 +1,7 @@
 # kom_dsgn_gruppe3
 
-link til github: https://github.com/arealalien/kom_dsgn_gruppe3
+link til github: https://github.com/arealalien/kom_dsgn_gruppe3 <br/>
+Se siden live her: https://arealalien.github.io/kom_dsgn_gruppe3/index.html
 
 ## Scripts used for this project
 
